@@ -84,8 +84,22 @@ The application uses environment variables for configuration. A .env file is use
 10. Running the Application
 To run the application locally, follow these steps:
 
-Clone the repository and navigate to the project directory.
-Install dependencies using npm install.
-Set up the database and Redis server (or use Docker Compose as described in the README).
-Create a .env file and set the required environment variables.
-Start the application using npm start.
+npm install
+
+Set up the database and Redis server:
+
+Option 1: Using Docker Compose (Recommended for easy setup)
+-> Make sure you have Docker and Docker Compose installed on your machine.
+-> Create a .env file in the project root directory and set the required environment variables 
+
+->  Run the following command to start the application along with the database and Redis server:
+docker-compose up -d --build
+Option 2: Manual Setup (Requires a locally running MySQL and Redis server)
+Make sure you have a MySQL server running with the credentials provided in the .env file.
+Make sure you have a Redis server running with the credentials provided in the .env file.
+Start the application:
+
+npm run start
+The application should now be running and accessible at http://localhost:3000.
+
+Note: When using Docker, make sure you have Docker installed and running on your machine. The .env file is used to set the environment variables within the Docker container. Make sure the .env file is present in the project directory before building or running the Docker image.
